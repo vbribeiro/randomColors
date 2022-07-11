@@ -1,21 +1,17 @@
 function botao () {
-    let getBotao = document.querySelector('#card__btn'),
+    var getBotao = document.querySelector('#card__btn'),
     getBox = document.querySelector('#card__color');
 
     getBotao.addEventListener('click', function (e) {
         e.preventDefault();
 
-        console.log("Oi");
-
-        function colorRand() {
-            var r = Math.random() * 255;
-            var g = Math.random() * 255;
-            var b = Math.random() * 255;
-
-            return r + g + b;
+        function random(numero) {
+            return Math.floor(Math.random()*(numero+1));
         }
 
-        getBox.style.backgroundColor = colorRand();
+        var randomColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+
+        getBox.style.backgroundColor = randomColor;
 
     })
 }
